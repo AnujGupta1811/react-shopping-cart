@@ -1,0 +1,353 @@
+/* Ensure full screen layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f4f6; /* Light gray background */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Main container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  /* Cart title */
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Cart Layout */
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+  
+  /* Cart Items Table */
+  .bg-white {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  tr:hover {
+    background-color: #f3f4f6;
+  }
+  
+  img {
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+  
+  /* Quantity Control Buttons */
+.flex.items-center button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: #333; /* Ensure the icons are visible */
+    font-size: 1.2rem; /* Increase size for better visibility */
+  }
+  
+  .flex.items-center button:hover {
+    transform: scale(1.2);
+    color: #007bff; /* Highlight on hover */
+  }
+  
+  /* Clear Cart Button */
+  .text-red-600 {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .text-red-600:hover {
+    color: #c53030;
+  }
+  
+  /* Order Summary Box */
+  .order-summary {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-summary h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 15px;
+  }
+  
+  .order-summary div {
+    font-size: 1.2rem;
+    color: #4a5568;
+  }
+  
+  .order-summary .total {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #000;
+    padding-top: 10px;
+    border-top: 2px solid #e5e7eb;
+  }
+  
+  /* Checkout Button */
+  button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    th, td {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  /* Blur effect for background */
+.checkout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.checkout-modal {
+  position: relative;
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+  /* Ensure the quantity controls are properly aligned */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adjust spacing between buttons and quantity */
+}
+
+.quantity-control button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: #333;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.quantity-control button:hover {
+    transform: scale(1.1);
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.quantity-control span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+}
+/* Modal Overlay */
+.checkout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.checkout-modal {
+  position: relative;
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: -170px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 0;
+  font-weight: bold;
+}
+
+.close-modal:hover {
+  /* Remove hover effect */
+  transform: none;
+}
+/* Blur effect on the background */
+body {
+  transition: all 0.3s ease;
+}
+
+.checkout-modal-overlay.active {
+  filter: blur(5px);
+}
+
+.checkout-modal-overlay.active body {
+  filter: blur(5px);
+}
+
+/* Checkout Modal Form Styling */
+form div {
+  margin-bottom: 15px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Ensure Address Field Matches Other Fields */
+.checkout-form textarea {
+    resize: none; /* Prevent resizing */
+    height: 100px; /* Same height as input fields */
+}
